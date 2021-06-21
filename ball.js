@@ -1,16 +1,21 @@
-function Ball(tempX, tempY, tempW) {
-  this.x = tempX;  
-  this.y = tempY;   
-  this.w = tempW;  
+class Ball 
+{
+  constructor(x,y,r)
+  {
+  this.x = x;  
+  this.y = y;   
+  this.r = r;  
   this.speed = 0;  
-
-  this.display = function() {
-    fill(255,100); 
-    stroke(0); 
-    ellipse(this.x,this.y,this.w,this.w); 
   }
 
-  this.update = function() {   
+  display() 
+  {
+    fill(255,100); 
+    stroke(0); 
+    ellipse(this.x,this.y,this.r,this.r); 
+  }
+
+  update() {   
     this.y = this.y + this.speed;    
     this.speed = this.speed + gravity; 
 
@@ -19,4 +24,5 @@ function Ball(tempX, tempY, tempW) {
       this.speed = this.speed * -0.95;  
     } 
   }
+  
 }
